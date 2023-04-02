@@ -1,0 +1,129 @@
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+a {
+    color: black;
+}
+
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+}
+
+a:hover{
+    color: #ff5c5c;
+}
+
+body {
+    overflow-x:hidden;
+    font-family: "S-CoreDream-3Light";
+}
+
+main_container { width: 1900px;}
+
+.main_container .top_wrap {
+    display: flex;
+    justify-content: space-around;
+    width : 100%;
+    border-bottom : 1px solid #ddd;
+    padding : 1rem;
+}
+
+
+.main_container .top_wrap .menu_wrap, .search_wrap {
+    display: flex;
+    align-items: flex-end;
+}
+
+.main_container .top_wrap .menu_wrap li{
+    float : left;
+    margin-left: 15px;
+    font-size: 1.3rem;
+    font-family: "S-CoreDream-3Light";
+}
+.main_container .top_wrap .menu_wrap li a{
+    padding: 5px;
+}
+
+.main_container .search_wrap form {
+    display: flex;
+    align-items: center;
+}
+
+.main_container .search_wrap input{
+    width: 180px;
+    height : 30px;
+    border : 2px solid rgb(255,92,92);
+}
+
+.main_container .search_wrap input:focus{
+    outline : 2px solid rgb(255,92,92);
+}
+
+.main_container .search_wrap button {
+    background-color: transparent;
+    border : transparent;
+    height: 30px;
+    cursor : pointer;
+
+}
+
+.main_container .search_wrap img {
+    height: 25px;
+    align-items: center;
+    margin-left: 3px;
+}
+
+.main_container .slide_wrap {
+    padding : 2rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.main_container .slide_wrap .slide img{
+    margin: 0 auto;
+    width : 100%;
+}
+
+.main_container .intro_wrap {
+    border: 3px solid #ff5c5c;
+    padding : 30px;
+    width: 70%;
+    margin : 2rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main_container .intro_wrap .intro_txt {
+    font-family: "BookkMyungjo-Bd";
+    font-size : 20px;
+    line-height: 1.8rem;
+}
+
+.main_container .intro_wrap .intro_play {
+    text-align: center;
+    height: 100%;
+}
+
+.main_container .intro_wrap strong{
+    color : red;
+}
+
+.main_container .contents_wrap {
+
+}
+
+.main_container .contents_wrap img {
+    width: 300px;
+    height: 100px;
+}

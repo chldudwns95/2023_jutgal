@@ -4,59 +4,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel = "icon" href = "/resources/image/favicon.png"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>엄마의 손맛, 강경젓갈입니다.</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel = "stylesheet" href = "/resources/css/index.css">
-
-    <!-- slick -->
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-
-    <script src="https://kit.fontawesome.com/0de6ed8d2e.js" crossorigin="anonymous"></script>
-
+    <link rel = "icon" href = "/resources/image/favicon.png"/>
 </head>
 
 <body>
+    <jsp:include page="menu.jsp"/>
     <div class = "main_container">
-        <div class = "top_wrap">
-            <div class = "menu_wrap">
-                <ul>
-                    <li>
-                        <i class="fa-solid fa-book" style="color: #ff5c5c;"></i>
-                        <a href ="/intro">소개</a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-gift" style="color: #ff5c5c;"></i>
-                        <a href ="/dish">반찬</a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-circle-question" style="color: #ff5c5c;"></i>
-                        <a href ="/qna">문의</a>
-
-                    </li>
-                </ul>
-            </div>
-            <div class = "logo">
-                <a href = "/">
-                    <img src = "/resources/image/logo_2.png">
-                </a>
-            </div>
-            <div class ="search_wrap">
-                <form>
-                    <input type = "text" placeholder="반찬명을 입력하여 주세요.">
-                    <button><img src ="/resources/image/search_btn.svg"></button>
-                    <%-- hover 넣을것--%>
-                </form>
-            </div>
-        </div>
-
         <div class = "slide_wrap">
             <div class ="slide">
                 <div><img src = "/resources/image/slide_1.png"></div>
@@ -187,7 +144,6 @@
             <div class="footer-img">
                 <a href = "/"><img src="/resources/image/footer.png"></a></div>
         </div>
-
     </div>
 </body>
 </html>

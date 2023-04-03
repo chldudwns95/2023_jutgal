@@ -19,8 +19,6 @@
                 <div><img src = "/resources/image/slide_1.png"></div>
                 <div><img src = "/resources/image/slide_2.png"></div>
                 <div><img src = "/resources/image/slide_3.png"></div>
-                <%--<div><img src = "/resources/image/slide_4.png"></div>
-                <div><img src = "/resources/image/slide_5.png"></div>--%>
             </div>
         </div>
 

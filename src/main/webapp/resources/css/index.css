@@ -29,7 +29,7 @@ body {
     font-family: "S-CoreDream-3Light";
 }
 
-main_container { width: 1900px;}
+.main_container { width: 1900px;}
 
 .main_container .top_wrap {
     display: flex;

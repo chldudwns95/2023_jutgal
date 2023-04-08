@@ -1,3 +1,4 @@
+
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -17,6 +18,37 @@
         <jsp:include page="../menu.jsp"/>
 
         <div class = "content_wrap">
+            <nav>
+                <div>
+                    <strong>반찬종류</strong>
+                    <ul>
+                        <li>반찬타입1</li>
+                        <li>반찬타입1</li>
+                        <li>반찬타입1</li>
+                        <li>반찬타입1</li>
+                        <li>반찬타입1</li>
+                        <li>반찬타입1</li>
+                        <li>반찬타입1</li>
+                        <li>반찬타입1</li>
+                        <li>반찬타입1</li>
+                    </ul>
+                </div>
+                <div>
+                    <strong>간편검색</strong>
+                    <ul>
+                        <li>간편검색</li>
+                        <li>간편검색</li>
+                        <li>간편검색</li>
+                        <li>간편검색</li>
+                        <li>간편검색</li>
+                        <li>간편검색</li>
+                        <li>간편검색</li>
+                        <li>간편검색</li>
+                        <li>간편검색</li>
+                    </ul>
+                </div>
+            </nav>
+
             <ul>
                 <li>
                     <div class = "content">

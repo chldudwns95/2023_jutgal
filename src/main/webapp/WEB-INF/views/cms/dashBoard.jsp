@@ -7,21 +7,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>dashboard</title>
     <link rel = "icon" href = "/resources/image/favicon.png"/>
+    <link rel="stylesheet" href="/resources/css/template.css"/>
 </head>
 <body>
-    <div>
-        <nav>
-            <strong>강경젓갈</strong>
-            <div>
-                <ul>
-                    <li>메뉴</li>
-                    <li>공지사항</li>
-                    <li>반찬</li>
-ß                </ul>
+<div class="grid_layout">
+    <%@ include file="template.jsp" %>
+    <div class="main">
+        <div class="head">
+            <div class="bread_crumb_wrap">
+                <div>
+                    <span>컨텐츠 관리 시스템</span>
+                    <span>/</span>
+                    <span class="current_menu">대시보드</span>
+                </div>
             </div>
-        </nav>
+            <div class="menu_title_wrap">
+                <h1>대시보드</h1>
+            </div>
+            <span class="menu_info">사이트 현황을 한눈에 볼 수 있습니다.</span>
+        </div>
     </div>
+</div>
+<script src="/resources/js/template.js"></script>
 </body>
 </html>

@@ -29,101 +29,64 @@ body {
     font-family: "S-CoreDream-3Light";
 }
 
-.main_container { width: 1900px;}
-
-.main_container .top_wrap {
-    display: flex;
-    justify-content: space-around;
-    width : 100%;
-    border-bottom : 1px solid #ddd;
-    padding : 1rem;
-}
+    .main_container {
+        width: 1600px;
+        margin: 0 auto;
+    }
 
 
-.main_container .top_wrap .menu_wrap, .search_wrap {
-    display: flex;
-    align-items: flex-end;
-}
+    .main_container .slide_wrap {
+        padding : 2rem;
+        border-bottom: 1px solid #ddd;
+    }
 
-.main_container .top_wrap .menu_wrap li{
-    float : left;
-    margin-left: 15px;
-    font-size: 1.3rem;
-    font-family: "S-CoreDream-3Light";
-}
-.main_container .top_wrap .menu_wrap li a{
-    padding: 5px;
-}
+    .main_container .slide_wrap .slide img{
+        margin: 0 auto;
+        width : 100%;
+    }
 
-.main_container .search_wrap form {
-    display: flex;
-    align-items: center;
-}
+    .main_container .intro_wrap {
+        border: 3px solid #ff5c5c;
+        padding : 30px;
+        width: 90%;
+        margin : 2rem auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-.main_container .search_wrap input{
-    width: 180px;
-    height : 30px;
-    border : 2px solid rgb(255,92,92);
-}
+    .main_container .intro_wrap .intro_txt {
+        font-family: "BookkMyungjo-Bd";
+        font-size : 20px;
+        line-height: 1.8rem;
+    }
 
-.main_container .search_wrap input:focus{
-    outline : 2px solid rgb(255,92,92);
-}
+    .main_container .intro_wrap .intro_play {
+        text-align: center;
+        height: 100%;
+    }
 
-.main_container .search_wrap button {
-    background-color: transparent;
-    border : transparent;
-    height: 30px;
-    cursor : pointer;
+    .main_container .intro_wrap strong{
+        color : red;
+    }
 
-}
+    .main_container .contents_wrap img {
+        width: 300px;
+        height: 100px;
+    }
 
-.main_container .search_wrap img {
-    height: 25px;
-    align-items: center;
-    margin-left: 3px;
-}
+@media screen and (max-width: 768px) {
+    .main_container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .main_container .slide_wrap img{
+        width: 700px;
+        height: 300px;
+    }
 
-.main_container .slide_wrap {
-    padding : 2rem;
-    border-bottom: 1px solid #ddd;
-}
-
-.main_container .slide_wrap .slide img{
-    margin: 0 auto;
-    width : 100%;
-}
-
-.main_container .intro_wrap {
-    border: 3px solid #ff5c5c;
-    padding : 30px;
-    width: 70%;
-    margin : 2rem auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.main_container .intro_wrap .intro_txt {
-    font-family: "BookkMyungjo-Bd";
-    font-size : 20px;
-    line-height: 1.8rem;
-}
-
-.main_container .intro_wrap .intro_play {
-    text-align: center;
-    height: 100%;
-}
-
-.main_container .intro_wrap strong{
-    color : red;
-}
-
-.main_container .contents_wrap {
-
-}
-
-.main_container .contents_wrap img {
-    width: 300px;
-    height: 100px;
+    .main_container .contents_wrap img{
+        width: 50%;
+        height: 50%;
+    }
 }

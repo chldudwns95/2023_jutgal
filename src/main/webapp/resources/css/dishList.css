@@ -46,7 +46,7 @@
         display : none;
     }
 
-    .mobile_list_container img {
+    .mobile_list_container .content_wrap .content img {
         width : 300px;
         height: 400px;
     }

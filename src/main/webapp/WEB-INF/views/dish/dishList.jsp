@@ -125,6 +125,7 @@
     <%-- 모바일 --%>
     <div class = "mobile_list_container">
         <div class = "mobile_list_wrap">
+            <jsp:include page="../menu.jsp"/>
             <ul>
                 <li>
                     <div class = "mobile_content">
@@ -135,15 +136,16 @@
                                 <span class = "mobile_content_sub_name" style = "font-size: 12px;">전세계의 입맛 맛소금!</span>
                             </div>
                         </div>
-
-                        <div>
-                            <a href = "#">
-                                <img src="https://www.miwon.co.kr/wp-content/uploads/2022/05/prdt_20150708021700914.jpg">
-                        </div>
-                        <div class = "mobile_content_info">
-                            <span>#인기제품</span>
-                            <span>15,000원 100g / 5000원</span>
-                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a href = "#">
+                            <img src="https://www.miwon.co.kr/wp-content/uploads/2022/05/prdt_20150708021700914.jpg">
+                            <div class = "mobile_content_info">
+                                <span>#인기제품</span>
+                                <span>15,000원 100g / 5000원</span>
+                            </div>
                         </a>
                     </div>
                 </li>

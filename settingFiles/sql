@@ -16,9 +16,6 @@ DROP TABLE "USER";
 -- 메뉴
 DROP TABLE "MENU_MST";
 
--- 팝업
-DROP TABLE "POP_MST";
-
 -- 채번상세
 DROP TABLE "AUTO_DTL";
 
@@ -36,14 +33,14 @@ DROP TABLE "DISH_DTL_SUB";
 
 -- 반찬
 CREATE TABLE "DISH_INFO" (
-	"DISH_CODE"     VARCHAR(100)  NOT NULL, -- 반찬코드
-	"DISH_NAME"     VARCHAR(100)  NULL,     -- 반찬이름
-	"DISH_CONTENTS" VARCHAR(4000) NULL,     -- 반찬소개
-	"DISH_PRICE"    VARCHAR(100)  NULL,     -- 가격
-	"DISH_G"        VARCHAR(100)  NULL,     -- 양
-	"USER_ID"       VARCHAR(300)  NULL,     -- 아이디
-	"FILE_CODE"     VARCHAR(100)  NULL,     -- FILE_CODE
-	"DISH_SUB_ID"   VARCHAR(10)   NULL      -- 반찬_서브_ID
+	"DISH_CODE"     VARCHAR2(100)  NOT NULL, -- 반찬코드
+	"DISH_NAME"     VARCHAR2(100)  NULL,     -- 반찬이름
+	"DISH_CONTENTS" VARCHAR2(4000) NULL,     -- 반찬소개
+	"DISH_PRICE"    VARCHAR2(100)  NULL,     -- 가격
+	"DISH_G"        VARCHAR2(100)  NULL,     -- 양
+	"USER_ID"       VARCHAR2(300)  NULL,     -- 아이디
+	"FILE_CODE"     VARCHAR2(100)  NULL,     -- FILE_CODE
+	"DISH_SUB_ID"   VARCHAR2(10)   NULL      -- 반찬_서브_ID
 );
 
 -- 반찬 기본키
@@ -62,11 +59,11 @@ ALTER TABLE "DISH_INFO"
 
 -- 공통
 CREATE TABLE "COMM_TABLE" (
-	"COMM_CD"    VARCHAR(100) NOT NULL, -- 코드
-	"COMM_NM"    VARCHAR(100) NULL,     -- 이름
-	"UP_COMM_CD" VARCHAR(100) NULL,     -- 상위코드
-	"REF_CODE"   VARCHAR(100) NULL,     -- 참조코드
-	"REF_NAME"   VARCHAR(100) NULL      -- 참조명
+	"COMM_CD"    VARCHAR2(100) NOT NULL, -- 코드
+	"COMM_NM"    VARCHAR2(100) NULL,     -- 이름
+	"UP_COMM_CD" VARCHAR2(100) NULL,     -- 상위코드
+	"REF_CODE"   VARCHAR2(100) NULL,     -- 참조코드
+	"REF_NAME"   VARCHAR2(100) NULL      -- 참조명
 );
 
 -- 공통 기본키
@@ -85,8 +82,8 @@ ALTER TABLE "COMM_TABLE"
 
 -- 게시판_MST
 CREATE TABLE "BOARD_MST" (
-	"BOARD_ID"   <데이터 타입 없음> NOT NULL, -- BOARD_ID
-	"BOARD_TYPE" <데이터 타입 없음> NULL      -- 게시판종류
+	"BOARD_ID"   VARCHAR2(10) NOT NULL, -- BOARD_ID
+	"BOARD_TYPE" VARCHAR2(100) NULL      -- 게시판종류
 );
 
 -- 게시판_MST 기본키
@@ -105,11 +102,11 @@ ALTER TABLE "BOARD_MST"
 
 -- 파일
 CREATE TABLE "COMM_FILE" (
-	"FILE_CODE" VARCHAR(100) NOT NULL, -- FILE_CODE
-	"FILE_NAME" VARCHAR(100) NOT NULL, -- FILE_NAME
-	"FILE_UUID" VARCHAR(100) NOT NULL, -- FILE_UUID
-	"FILE_TYPE" VARCHAR(100) NULL,     -- FILE_TYPE
-	"FILE_SIZE" VARCHAR(100) NULL      -- FILE_SIZE
+	"FILE_CODE" VARCHAR2(100) NOT NULL, -- FILE_CODE
+	"FILE_NAME" VARCHAR2(100) NOT NULL, -- FILE_NAME
+	"FILE_UUID" VARCHAR2(100) NOT NULL, -- FILE_UUID
+	"FILE_TYPE" VARCHAR2(100) NULL,     -- FILE_TYPE
+	"FILE_SIZE" VARCHAR2(100) NULL      -- FILE_SIZE
 );
 
 -- 파일 기본키
@@ -128,10 +125,10 @@ ALTER TABLE "COMM_FILE"
 
 -- 사용자
 CREATE TABLE "USER" (
-	"USER_ID" VARCHAR(300) NOT NULL, -- 아이디
-	"USER_PW" VARCHAR(300) NOT NULL, -- 비밀번호
-	"ROLE"    VARCHAR(10)  NULL,     -- 권한
-	"NAME"    VARCHAR(10)  NULL      -- 이름
+	"USER_ID" VARCHAR2(300) NOT NULL, -- 아이디
+	"USER_PW" VARCHAR2(300) NOT NULL, -- 비밀번호
+	"ROLE"    VARCHAR2(10)  NULL,     -- 권한
+	"NAME"    VARCHAR2(10)  NULL      -- 이름
 );
 
 -- 사용자 기본키
@@ -150,9 +147,9 @@ ALTER TABLE "USER"
 
 -- 메뉴
 CREATE TABLE "MENU_MST" (
-	"UP_MENU_ID" VARCHAR(100) NOT NULL, -- 대메뉴 번호
-	"MENU_NAME"  VARCHAR(100) NULL,     -- 대메뉴 이름
-	"MENU_ORDER" VARCHAR(100) NULL      -- 대메뉴 순서
+	"UP_MENU_ID" VARCHAR2(100) NOT NULL, -- 대메뉴 번호
+	"MENU_NAME"  VARCHAR2(100) NULL,     -- 대메뉴 이름
+	"MENU_ORDER" VARCHAR2(100) NULL      -- 대메뉴 순서
 );
 
 -- 메뉴 기본키
@@ -169,17 +166,13 @@ ALTER TABLE "MENU_MST"
 			"UP_MENU_ID" -- 대메뉴 번호
 		);
 
--- 팝업
-CREATE TABLE "POP_MST" (
-);
-
 -- 채번상세
 CREATE TABLE "AUTO_DTL" (
-	"COMM_CD"   VARCHAR(100) NOT NULL, -- 코드
-	"PRE_FIX"   VARCHAR(100) NULL,     -- 참조코드번호
-	"AFTER_FIX" VARCHAR(100) NULL,     -- -0001
+	"COMM_CD"   VARCHAR2(100) NOT NULL, -- 코드
+	"PRE_FIX"   VARCHAR2(100) NULL,     -- 참조코드번호
+	"AFTER_FIX" VARCHAR2(100) NULL,     -- -0001
 	"REG_DATE"  DATE         NULL,     -- 등록일
-	"AUTO_NO"   VARCHAR(100) NULL      -- 코드2
+	"AUTO_NO"   VARCHAR2(100) NULL      -- 코드2
 );
 
 -- 채번상세 기본키
@@ -198,10 +191,10 @@ ALTER TABLE "AUTO_DTL"
 
 -- 채번마스터
 CREATE TABLE "AUTO_NO_MST" (
-	"AUTO_NO"  VARCHAR(100) NOT NULL, -- 코드
-	"AUTO_NM"  VARCHAR(100) NULL,     -- 이름
-	"REF_CODE" VARCHAR(100) NULL,     -- 참조코드
-	"REF_NAME" VARCHAR(100) NULL      -- 참조명
+	"AUTO_NO"  VARCHAR2(100) NOT NULL, -- 코드
+	"AUTO_NM"  VARCHAR2(100) NULL,     -- 이름
+	"REF_CODE" VARCHAR2(100) NULL,     -- 참조코드
+	"REF_NAME" VARCHAR2(100) NULL      -- 참조명
 );
 
 -- 채번마스터 기본키
@@ -220,13 +213,13 @@ ALTER TABLE "AUTO_NO_MST"
 
 -- 게시판_상세
 CREATE TABLE "BOARD_DTL" (
-	"BOARD_CODE"     VARCHAR(100)       NOT NULL, -- 게시글코드
-	"BOARD_TITLE"    VARCHAR(100)       NULL,     -- 게시글 제목
-	"BOARD_CONTENTS" VARCHAR(4000)      NULL,     -- 게시글내용
+	"BOARD_CODE"     VARCHAR2(100)       NOT NULL, -- 게시글코드
+	"BOARD_TITLE"    VARCHAR2(100)       NULL,     -- 게시글 제목
+	"BOARD_CONTENTS" VARCHAR2(4000)      NULL,     -- 게시글내용
 	"REG_DATE"       DATE               NULL,     -- 등록일
 	"VIEW_CNT"       INTEGER            NULL,     -- 조회수
-	"BOARD_ID"       <데이터 타입 없음> NULL,     -- BOARD_ID
-	"USER_ID"        VARCHAR(300)       NULL      -- 아이디
+	"BOARD_ID"       VARCHAR2(100)      NULL,     -- BOARD_ID
+	"USER_ID"        VARCHAR2(300)       NULL      -- 아이디
 );
 
 -- 게시판_상세 기본키
@@ -245,10 +238,10 @@ ALTER TABLE "BOARD_DTL"
 
 -- 메뉴상세
 CREATE TABLE "MENU_DTL" (
-	"MENU_ID"    VARCHAR(100) NOT NULL, -- MENU_ID
-	"MENU_NAME"  VARCHAR(100) NULL,     -- MENU_NAME
-	"TREE_ORDER" VARCHAR(100) NULL,     -- TREE_ORDER
-	"UP_MENU_ID" VARCHAR(100) NULL      -- 대메뉴 번호
+	"MENU_ID"    VARCHAR2(100) NOT NULL, -- MENU_ID
+	"MENU_NAME"  VARCHAR2(100) NULL,     -- MENU_NAME
+	"TREE_ORDER" VARCHAR2(100) NULL,     -- TREE_ORDER
+	"UP_MENU_ID" VARCHAR2(100) NULL      -- 대메뉴 번호
 );
 
 -- 메뉴상세 기본키
@@ -267,8 +260,8 @@ ALTER TABLE "MENU_DTL"
 
 -- 반찬_서브타이틀
 CREATE TABLE "DISH_DTL_SUB" (
-	"DISH_SUB_ID"   VARCHAR(10)  NOT NULL, -- 반찬_서브_ID
-	"DISH_SUB_NAME" VARCHAR(100) NOT NULL  -- 반찬_서브_제목
+	"DISH_SUB_ID"   VARCHAR2(10)  NOT NULL, -- 반찬_서브_ID
+	"DISH_SUB_NAME" VARCHAR2(100) NOT NULL  -- 반찬_서브_제목
 );
 
 -- 반찬_서브타이틀 기본키

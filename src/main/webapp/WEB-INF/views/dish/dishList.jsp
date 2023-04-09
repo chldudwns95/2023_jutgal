@@ -16,39 +16,38 @@
 <body>
     <div class = "list_container">
         <jsp:include page="../menu.jsp"/>
+        <nav class = "nav_wrap">
+            <div class = "nav_wrap_list">
+                <strong>반찬종류</strong>
+                <ul>
+                    <li>반찬타입1</li>
+                    <li>반찬타입1</li>
+                    <li>반찬타입1</li>
+                    <li>반찬타입1</li>
+                    <li>반찬타입1</li>
+                    <li>반찬타입1</li>
+                    <li>반찬타입1</li>
+                    <li>반찬타입1</li>
+                    <li>반찬타입1</li>
+                </ul>
+            </div>
+            <div class = "nav_wrap_list">
+                <strong>간편검색</strong>
+                <ul>
+                    <li>간편검색</li>
+                    <li>간편검색</li>
+                    <li>간편검색</li>
+                    <li>간편검색</li>
+                    <li>간편검색</li>
+                    <li>간편검색</li>
+                    <li>간편검색</li>
+                    <li>간편검색</li>
+                    <li>간편검색</li>
+                </ul>
+            </div>
+        </nav>
 
         <div class = "content_wrap">
-            <nav>
-                <div>
-                    <strong>반찬종류</strong>
-                    <ul>
-                        <li>반찬타입1</li>
-                        <li>반찬타입1</li>
-                        <li>반찬타입1</li>
-                        <li>반찬타입1</li>
-                        <li>반찬타입1</li>
-                        <li>반찬타입1</li>
-                        <li>반찬타입1</li>
-                        <li>반찬타입1</li>
-                        <li>반찬타입1</li>
-                    </ul>
-                </div>
-                <div>
-                    <strong>간편검색</strong>
-                    <ul>
-                        <li>간편검색</li>
-                        <li>간편검색</li>
-                        <li>간편검색</li>
-                        <li>간편검색</li>
-                        <li>간편검색</li>
-                        <li>간편검색</li>
-                        <li>간편검색</li>
-                        <li>간편검색</li>
-                        <li>간편검색</li>
-                    </ul>
-                </div>
-            </nav>
-
             <ul>
                 <li>
                     <div class = "content">
@@ -124,8 +123,38 @@
 
     <%-- 모바일 --%>
     <div class = "mobile_list_container">
+        <jsp:include page="../menu.jsp"/>
+        <nav class = "mobile_nav_wrap">
+            <div class = "mobile_nav_wrap_list">
+                <strong>반찬종류</strong>
+                <ul>
+                    <li>반찬타입1</li>
+                    <li>반찬타입1</li>
+                    <li>반찬타입1</li>
+                    <li>반찬타입1</li>
+                    <li>반찬타입1</li>
+                    <li>반찬타입1</li>
+                    <li>반찬타입1</li>
+                    <li>반찬타입1</li>
+                    <li>반찬타입1</li>
+                </ul>
+            </div>
+            <div class = "mobile_nav_wrap_list">
+                <strong>간편검색</strong>
+                <ul>
+                    <li>간편검색</li>
+                    <li>간편검색</li>
+                    <li>간편검색</li>
+                    <li>간편검색</li>
+                    <li>간편검색</li>
+                    <li>간편검색</li>
+                    <li>간편검색</li>
+                    <li>간편검색</li>
+                    <li>간편검색</li>
+                </ul>
+            </div>
+        </nav>
         <div class = "mobile_list_wrap">
-            <jsp:include page="../menu.jsp"/>
             <ul>
                 <li>
                     <div class = "mobile_content">
@@ -136,22 +165,22 @@
                                 <span class = "mobile_content_sub_name" style = "font-size: 12px;">전세계의 입맛 맛소금!</span>
                             </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a href = "#">
-                            <img src="https://www.miwon.co.kr/wp-content/uploads/2022/05/prdt_20150708021700914.jpg">
-                            <div class = "mobile_content_info">
-                                <span>#인기제품</span>
-                                <span>15,000원 100g / 5000원</span>
-                            </div>
-                        </a>
+                        <div class = "mobile_content_info">
+                            <a href = "#">
+                                <img src="https://www.miwon.co.kr/wp-content/uploads/2022/05/prdt_20150708021700914.jpg">
+                                <div class = "mobile_content_info">
+                                    <span>#인기제품</span>
+                                    <span>15,000원 100g / 5000원</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </li>
             </ul>
         </div>
     </div>
+
+    <jsp:include page="../footer.jsp"/>
 
 </body>
 </html>

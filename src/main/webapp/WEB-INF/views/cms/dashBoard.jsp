@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dashboard</title>
+    <title>관리자페이지</title>
     <link rel = "icon" href = "/resources/image/favicon.png"/>
     <link rel="stylesheet" href="/resources/css/template.css"/>
 </head>

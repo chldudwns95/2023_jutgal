@@ -2,14 +2,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
-
-	<!-- Root Context: defines shared resources visible to all other web components -->
+<!--
+	&lt;!&ndash; Root Context: defines shared resources visible to all other web components &ndash;&gt;
 	<bean destroy-method="close" class="org.apache.commons.dbcp2.BasicDataSource" id="dataSource">
 		<property value="oracle.jdbc.driver.OracleDriver" name="driverClassName"/>
 		<property value="jdbc:oracle:thin:@localhost:1521:XE" name="url"/>
 		<property value="C##JUTGAL_2023" name="username"/>
 		<property value="jutgal" name="password"/>
 	</bean>
+-->
 <!--
 	<bean destroy-method="close" class="org.apache.commons.dbcp2.BasicDataSource" id="dataSource">
 		<property value="com.mysql.jdbc.Driver" name="driverClassName"/>
@@ -17,7 +18,12 @@
 		<property value="root" name="username"/>
 		<property value="1234" name="password"/>
 	</bean>-->
-
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="org.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/2023_JUTGAL"/>
+		<property name="username" value="2023_JUTGAL"/>
+		<property name="password" value="JUTGAL"/>
+	</bean>
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
 		<property name="configLocation" value="classpath:mybatis-config.xml"></property>

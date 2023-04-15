@@ -11,19 +11,20 @@
 		<property value="jutgal" name="password"/>
 	</bean>
 -->
-<!--
+
 	<bean destroy-method="close" class="org.apache.commons.dbcp2.BasicDataSource" id="dataSource">
 		<property value="com.mysql.jdbc.Driver" name="driverClassName"/>
-		<property value="jdbc:mysql://localhost:3306/madang" name="url"/>
-		<property value="root" name="username"/>
-		<property value="1234" name="password"/>
-	</bean>-->
-	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+		<property value="jdbc:mysql://localhost:3306/2023_JUTGAL" name="url"/>
+		<property value="2023_JUTGAL" name="username"/>
+		<property value="JUTGAL" name="password"/>
+	</bean>
+	<!--<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="org.mysql.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql://localhost:3306/2023_JUTGAL"/>
+		<property name="url" value="jdbc:mysql://localhost:3306"/>
 		<property name="username" value="2023_JUTGAL"/>
 		<property name="password" value="JUTGAL"/>
-	</bean>
+	</bean>-->
+
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
 		<property name="configLocation" value="classpath:mybatis-config.xml"></property>

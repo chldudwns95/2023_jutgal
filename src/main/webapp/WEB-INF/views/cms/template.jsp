@@ -14,7 +14,7 @@
                 </div>
             </li>
             <li class="menu">
-                <a href = "/cms/insDish">
+                <a href = "/cms/intro/introList">
                     <div class="menu_wrap">
                         <span class="menu_name">공지관리</span>
                         <span class="material-symbols-outlined more_btn">chevron_right</span>
@@ -28,12 +28,12 @@
                 </div>
                 <ul class="menu_depth2">
                     <div class="wrap">
-                        <a href="/cms/articler">
+                        <a href="/cms/dish/dishList">
                             <li class="menu">
                                 <span class="menu_name">반찬</span>
                             </li>
                         </a>
-                        <a href="/cms/operator">
+                        <a href="/cms/dish/subList">
                             <li class="menu">
                                 <span class="menu_name">인기반찬</span>
                             </li>

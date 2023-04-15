@@ -1,345 +1,232 @@
 -- 반찬
-DROP TABLE "DISH_INFO";
-
--- 공통
-DROP TABLE "COMM_TABLE";
-
--- 게시판_MST
-DROP TABLE "BOARD_MST";
-
--- 파일
-DROP TABLE "COMM_FILE";
-
--- 사용자
-DROP TABLE "USER";
-
--- 메뉴
-DROP TABLE "MENU_MST";
-
--- 채번상세
-DROP TABLE "AUTO_DTL";
-
--- 채번마스터
-DROP TABLE "AUTO_NO_MST";
-
--- 게시판_상세
-DROP TABLE "BOARD_DTL";
-
--- 메뉴상세
-DROP TABLE "MENU_DTL";
-
--- 반찬_서브타이틀
-DROP TABLE "DISH_DTL_SUB";
+CREATE TABLE DISH_INFO (
+	DISH_CODE     VARCHAR(100)  NOT NULL COMMENT '반찬코드', -- 반찬코드
+	DISH_NAME     VARCHAR(100)  NULL     COMMENT '반찬이름', -- 반찬이름
+	DISH_CONTENTS VARCHAR(4000) NULL     COMMENT '반찬소개', -- 반찬소개
+	DISH_PRICE    VARCHAR(100)  NULL     COMMENT '가격', -- 가격
+	DISH_G        VARCHAR(100)  NULL     COMMENT '양', -- 양
+	SUBTITLE_CODE VARCHAR(10)   NULL     COMMENT '서브타이틀_번호', -- 서브타이틀_번호
+	DISH_VIEW_CNT INT           NULL     COMMENT '조회수' -- 조회수
+)
+COMMENT '반찬';
 
 -- 반찬
-CREATE TABLE "DISH_INFO" (
-	"DISH_CODE"     VARCHAR2(100)  NOT NULL, -- 반찬코드
-	"DISH_NAME"     VARCHAR2(100)  NULL,     -- 반찬이름
-	"DISH_CONTENTS" VARCHAR2(4000) NULL,     -- 반찬소개
-	"DISH_PRICE"    VARCHAR2(100)  NULL,     -- 가격
-	"DISH_G"        VARCHAR2(100)  NULL,     -- 양
-	"USER_ID"       VARCHAR2(300)  NULL,     -- 아이디
-	"FILE_CODE"     VARCHAR2(100)  NULL,     -- FILE_CODE
-	"DISH_SUB_ID"   VARCHAR2(10)   NULL      -- 반찬_서브_ID
-);
-
--- 반찬 기본키
-CREATE UNIQUE INDEX "PK_DISH_INFO"
-	ON "DISH_INFO" ( -- 반찬
-		"DISH_CODE" ASC -- 반찬코드
-	);
-
--- 반찬
-ALTER TABLE "DISH_INFO"
-	ADD
-		CONSTRAINT "PK_DISH_INFO" -- 반찬 기본키
+ALTER TABLE DISH_INFO
+	ADD CONSTRAINT PK_DISH_INFO -- 반찬 기본키
 		PRIMARY KEY (
-			"DISH_CODE" -- 반찬코드
+			DISH_CODE -- 반찬코드
 		);
 
 -- 공통
-CREATE TABLE "COMM_TABLE" (
-	"COMM_CD"    VARCHAR2(100) NOT NULL, -- 코드
-	"COMM_NM"    VARCHAR2(100) NULL,     -- 이름
-	"UP_COMM_CD" VARCHAR2(100) NULL,     -- 상위코드
-	"REF_CODE"   VARCHAR2(100) NULL,     -- 참조코드
-	"REF_NAME"   VARCHAR2(100) NULL      -- 참조명
-);
-
--- 공통 기본키
-CREATE UNIQUE INDEX "PK_COMM_TABLE"
-	ON "COMM_TABLE" ( -- 공통
-		"COMM_CD" ASC -- 코드
-	);
+CREATE TABLE COMM_TABLE (
+	COMM_CD    VARCHAR(100) NOT NULL COMMENT '코드', -- 코드
+	COMM_NM    VARCHAR(100) NULL     COMMENT '이름', -- 이름
+	UP_COMM_CD VARCHAR(100) NULL     COMMENT '상위코드', -- 상위코드
+	REF_CODE   VARCHAR(100) NULL     COMMENT '참조코드', -- 참조코드
+	REF_NAME   VARCHAR(100) NULL     COMMENT '참조명' -- 참조명
+)
+COMMENT '공통';
 
 -- 공통
-ALTER TABLE "COMM_TABLE"
-	ADD
-		CONSTRAINT "PK_COMM_TABLE" -- 공통 기본키
+ALTER TABLE COMM_TABLE
+	ADD CONSTRAINT PK_COMM_TABLE -- 공통 기본키
 		PRIMARY KEY (
-			"COMM_CD" -- 코드
+			COMM_CD -- 코드
 		);
 
--- 게시판_MST
-CREATE TABLE "BOARD_MST" (
-	"BOARD_ID"   VARCHAR2(10) NOT NULL, -- BOARD_ID
-	"BOARD_TYPE" VARCHAR2(100) NULL      -- 게시판종류
-);
+-- 게시판 마스터
+CREATE TABLE BOARD_MST (
+	BOARD_TYPE VARCHAR(100) NOT NULL COMMENT '게시판종류', -- 게시판종류
+	BOARD_NAME VARCHAR(100) NULL     COMMENT '게시판 대메뉴' -- 게시판 대메뉴
+)
+COMMENT '게시판 마스터';
 
--- 게시판_MST 기본키
-CREATE UNIQUE INDEX "PK_BOARD_MST"
-	ON "BOARD_MST" ( -- 게시판_MST
-		"BOARD_ID" ASC -- BOARD_ID
-	);
-
--- 게시판_MST
-ALTER TABLE "BOARD_MST"
-	ADD
-		CONSTRAINT "PK_BOARD_MST" -- 게시판_MST 기본키
+-- 게시판 마스터
+ALTER TABLE BOARD_MST
+	ADD CONSTRAINT PK_BOARD_MST -- 게시판 마스터 기본키
 		PRIMARY KEY (
-			"BOARD_ID" -- BOARD_ID
+			BOARD_TYPE -- 게시판종류
 		);
 
 -- 파일
-CREATE TABLE "COMM_FILE" (
-	"FILE_CODE" VARCHAR2(100) NOT NULL, -- FILE_CODE
-	"FILE_NAME" VARCHAR2(100) NOT NULL, -- FILE_NAME
-	"FILE_UUID" VARCHAR2(100) NOT NULL, -- FILE_UUID
-	"FILE_TYPE" VARCHAR2(100) NULL,     -- FILE_TYPE
-	"FILE_SIZE" VARCHAR2(100) NULL      -- FILE_SIZE
-);
-
--- 파일 기본키
-CREATE UNIQUE INDEX "PK_COMM_FILE"
-	ON "COMM_FILE" ( -- 파일
-		"FILE_CODE" ASC -- FILE_CODE
-	);
+CREATE TABLE COMM_FILE (
+	FILE_CODE VARCHAR(100)  NOT NULL COMMENT 'FILE_CODE', -- FILE_CODE
+	FILE_NAME VARCHAR(100)  NOT NULL COMMENT 'FILE_NAME', -- FILE_NAME
+	FILE_UUID VARCHAR(100)  NOT NULL COMMENT 'FILE_UUID', -- FILE_UUID
+	FILE_TYPE VARCHAR(100)  NULL     COMMENT 'FILE_TYPE', -- FILE_TYPE
+	FILE_SIZE VARCHAR(100)  NULL     COMMENT 'FILE_SIZE', -- FILE_SIZE
+	UP_CODE   VARCHAR(100)  NULL     COMMENT 'UP_CODE', -- UP_CODE
+	FILE_PATH VARCHAR(4000) NULL     COMMENT '파일경로', -- 파일경로
+	FILE_ORD  INT           NULL     COMMENT '정렬' -- 정렬
+)
+COMMENT '파일';
 
 -- 파일
-ALTER TABLE "COMM_FILE"
-	ADD
-		CONSTRAINT "PK_COMM_FILE" -- 파일 기본키
+ALTER TABLE COMM_FILE
+	ADD CONSTRAINT PK_COMM_FILE -- 파일 기본키
 		PRIMARY KEY (
-			"FILE_CODE" -- FILE_CODE
+			FILE_CODE -- FILE_CODE
 		);
 
 -- 사용자
-CREATE TABLE "USER" (
-	"USER_ID" VARCHAR2(300) NOT NULL, -- 아이디
-	"USER_PW" VARCHAR2(300) NOT NULL, -- 비밀번호
-	"ROLE"    VARCHAR2(10)  NULL,     -- 권한
-	"NAME"    VARCHAR2(10)  NULL      -- 이름
-);
-
--- 사용자 기본키
-CREATE UNIQUE INDEX "PK_USER"
-	ON "USER" ( -- 사용자
-		"USER_ID" ASC -- 아이디
-	);
+CREATE TABLE MEMBER_INFO (
+	MEM_ID VARCHAR(300) NOT NULL COMMENT '아이디', -- 아이디
+	MEN_PW VARCHAR(300) NOT NULL COMMENT '비밀번호', -- 비밀번호
+	ROLE   VARCHAR(10)  NULL     COMMENT '권한', -- 권한
+	NAME   VARCHAR(10)  NULL     COMMENT '이름' -- 이름
+)
+COMMENT '사용자';
 
 -- 사용자
-ALTER TABLE "USER"
-	ADD
-		CONSTRAINT "PK_USER" -- 사용자 기본키
+ALTER TABLE MEMBER_INFO
+	ADD CONSTRAINT PK_MEMBER_INFO -- 사용자 기본키
 		PRIMARY KEY (
-			"USER_ID" -- 아이디
+			MEM_ID -- 아이디
 		);
 
 -- 메뉴
-CREATE TABLE "MENU_MST" (
-	"UP_MENU_ID" VARCHAR2(100) NOT NULL, -- 대메뉴 번호
-	"MENU_NAME"  VARCHAR2(100) NULL,     -- 대메뉴 이름
-	"MENU_ORDER" VARCHAR2(100) NULL      -- 대메뉴 순서
-);
-
--- 메뉴 기본키
-CREATE UNIQUE INDEX "PK_MENU_MST"
-	ON "MENU_MST" ( -- 메뉴
-		"UP_MENU_ID" ASC -- 대메뉴 번호
-	);
+CREATE TABLE MENU_MST (
+	UP_MENU_ID VARCHAR(100) NOT NULL COMMENT '대메뉴 번호', -- 대메뉴 번호
+	MENU_NAME  VARCHAR(100) NULL     COMMENT '대메뉴 이름', -- 대메뉴 이름
+	MENU_ORDER VARCHAR(100) NULL     COMMENT '대메뉴 순서' -- 대메뉴 순서
+)
+COMMENT '메뉴';
 
 -- 메뉴
-ALTER TABLE "MENU_MST"
-	ADD
-		CONSTRAINT "PK_MENU_MST" -- 메뉴 기본키
+ALTER TABLE MENU_MST
+	ADD CONSTRAINT PK_MENU_MST -- 메뉴 기본키
 		PRIMARY KEY (
-			"UP_MENU_ID" -- 대메뉴 번호
+			UP_MENU_ID -- 대메뉴 번호
 		);
 
 -- 채번상세
-CREATE TABLE "AUTO_DTL" (
-	"COMM_CD"   VARCHAR2(100) NOT NULL, -- 코드
-	"PRE_FIX"   VARCHAR2(100) NULL,     -- 참조코드번호
-	"AFTER_FIX" VARCHAR2(100) NULL,     -- -0001
-	"REG_DATE"  DATE         NULL,     -- 등록일
-	"AUTO_NO"   VARCHAR2(100) NULL      -- 코드2
-);
-
--- 채번상세 기본키
-CREATE UNIQUE INDEX "PK_AUTO_DTL"
-	ON "AUTO_DTL" ( -- 채번상세
-		"COMM_CD" ASC -- 코드
-	);
+CREATE TABLE AUTO_DTL (
+	COMM_CD   VARCHAR(100) NOT NULL COMMENT '코드', -- 코드
+	PRE_FIX   VARCHAR(100) NULL     COMMENT '참조코드번호', -- 참조코드번호
+	AFTER_FIX VARCHAR(100) NULL     COMMENT '-0001', -- -0001
+	REG_DATE  DATE         NULL     COMMENT '등록일', -- 등록일
+	AUTO_NO   VARCHAR(100) NULL     COMMENT '코드2' -- 코드2
+)
+COMMENT '채번상세';
 
 -- 채번상세
-ALTER TABLE "AUTO_DTL"
-	ADD
-		CONSTRAINT "PK_AUTO_DTL" -- 채번상세 기본키
+ALTER TABLE AUTO_DTL
+	ADD CONSTRAINT PK_AUTO_DTL -- 채번상세 기본키
 		PRIMARY KEY (
-			"COMM_CD" -- 코드
+			COMM_CD -- 코드
 		);
 
 -- 채번마스터
-CREATE TABLE "AUTO_NO_MST" (
-	"AUTO_NO"  VARCHAR2(100) NOT NULL, -- 코드
-	"AUTO_NM"  VARCHAR2(100) NULL,     -- 이름
-	"REF_CODE" VARCHAR2(100) NULL,     -- 참조코드
-	"REF_NAME" VARCHAR2(100) NULL      -- 참조명
-);
-
--- 채번마스터 기본키
-CREATE UNIQUE INDEX "PK_AUTO_NO_MST"
-	ON "AUTO_NO_MST" ( -- 채번마스터
-		"AUTO_NO" ASC -- 코드
-	);
+CREATE TABLE AUTO_NO_MST (
+	AUTO_NO  VARCHAR(100) NOT NULL COMMENT '코드', -- 코드
+	AUTO_NM  VARCHAR(100) NULL     COMMENT '이름', -- 이름
+	REF_CODE VARCHAR(100) NULL     COMMENT '참조코드', -- 참조코드
+	REF_NAME VARCHAR(100) NULL     COMMENT '참조명' -- 참조명
+)
+COMMENT '채번마스터';
 
 -- 채번마스터
-ALTER TABLE "AUTO_NO_MST"
-	ADD
-		CONSTRAINT "PK_AUTO_NO_MST" -- 채번마스터 기본키
+ALTER TABLE AUTO_NO_MST
+	ADD CONSTRAINT PK_AUTO_NO_MST -- 채번마스터 기본키
 		PRIMARY KEY (
-			"AUTO_NO" -- 코드
+			AUTO_NO -- 코드
 		);
 
 -- 게시판_상세
-CREATE TABLE "BOARD_DTL" (
-	"BOARD_CODE"     VARCHAR2(100)       NOT NULL, -- 게시글코드
-	"BOARD_TITLE"    VARCHAR2(100)       NULL,     -- 게시글 제목
-	"BOARD_CONTENTS" VARCHAR2(4000)      NULL,     -- 게시글내용
-	"REG_DATE"       DATE               NULL,     -- 등록일
-	"VIEW_CNT"       INTEGER            NULL,     -- 조회수
-	"BOARD_ID"       VARCHAR2(100)      NULL,     -- BOARD_ID
-	"USER_ID"        VARCHAR2(300)       NULL      -- 아이디
-);
-
--- 게시판_상세 기본키
-CREATE UNIQUE INDEX "PK_BOARD_DTL"
-	ON "BOARD_DTL" ( -- 게시판_상세
-		"BOARD_CODE" ASC -- 게시글코드
-	);
+CREATE TABLE BOARD_DTL (
+	BOARD_CODE     VARCHAR(100)  NOT NULL COMMENT '게시글코드', -- 게시글코드
+	BOARD_TITLE    VARCHAR(100)  NULL     COMMENT '게시글 제목', -- 게시글 제목
+	BOARD_CONTENTS VARCHAR(4000) NULL     COMMENT '게시글내용', -- 게시글내용
+	REG_DATE       DATE          NULL     COMMENT '등록일', -- 등록일
+	BOARD_VIEW_CNT INT           NULL     COMMENT '조회수', -- 조회수
+	BOARD_TYPE     VARCHAR(100)  NULL     COMMENT '게시판종류', -- 게시판종류
+	MEM_ID         VARCHAR(300)  NULL     COMMENT '아이디' -- 아이디
+)
+COMMENT '게시판_상세';
 
 -- 게시판_상세
-ALTER TABLE "BOARD_DTL"
-	ADD
-		CONSTRAINT "PK_BOARD_DTL" -- 게시판_상세 기본키
+ALTER TABLE BOARD_DTL
+	ADD CONSTRAINT PK_BOARD_DTL -- 게시판_상세 기본키
 		PRIMARY KEY (
-			"BOARD_CODE" -- 게시글코드
+			BOARD_CODE -- 게시글코드
 		);
 
 -- 메뉴상세
-CREATE TABLE "MENU_DTL" (
-	"MENU_ID"    VARCHAR2(100) NOT NULL, -- MENU_ID
-	"MENU_NAME"  VARCHAR2(100) NULL,     -- MENU_NAME
-	"TREE_ORDER" VARCHAR2(100) NULL,     -- TREE_ORDER
-	"UP_MENU_ID" VARCHAR2(100) NULL      -- 대메뉴 번호
-);
-
--- 메뉴상세 기본키
-CREATE UNIQUE INDEX "PK_MENU_DTL"
-	ON "MENU_DTL" ( -- 메뉴상세
-		"MENU_ID" ASC -- MENU_ID
-	);
+CREATE TABLE MENU_DTL (
+	MENU_ID    VARCHAR(100) NOT NULL COMMENT 'MENU_ID', -- MENU_ID
+	MENU_NAME  VARCHAR(100) NULL     COMMENT 'MENU_NAME', -- MENU_NAME
+	TREE_ORDER VARCHAR(100) NULL     COMMENT 'TREE_ORDER', -- TREE_ORDER
+	UP_MENU_ID VARCHAR(100) NULL     COMMENT '대메뉴 번호' -- 대메뉴 번호
+)
+COMMENT '메뉴상세';
 
 -- 메뉴상세
-ALTER TABLE "MENU_DTL"
-	ADD
-		CONSTRAINT "PK_MENU_DTL" -- 메뉴상세 기본키
+ALTER TABLE MENU_DTL
+	ADD CONSTRAINT PK_MENU_DTL -- 메뉴상세 기본키
 		PRIMARY KEY (
-			"MENU_ID" -- MENU_ID
+			MENU_ID -- MENU_ID
 		);
 
--- 반찬_서브타이틀
-CREATE TABLE "DISH_DTL_SUB" (
-	"DISH_SUB_ID"   VARCHAR2(10)  NOT NULL, -- 반찬_서브_ID
-	"DISH_SUB_NAME" VARCHAR2(100) NOT NULL  -- 반찬_서브_제목
-);
+-- 서브타이틀
+CREATE TABLE DISH_DTL_SUB (
+	SUBTITLE_CODE VARCHAR(10)  NOT NULL COMMENT '서브타이틀_번호', -- 서브타이틀_번호
+	SUBTITLE_NAME VARCHAR(100) NOT NULL COMMENT '서브타이틀_제목' -- 서브타이틀_제목
+)
+COMMENT '서브타이틀';
 
--- 반찬_서브타이틀 기본키
-CREATE UNIQUE INDEX "PK_DISH_DTL_SUB"
-	ON "DISH_DTL_SUB" ( -- 반찬_서브타이틀
-		"DISH_SUB_ID" ASC -- 반찬_서브_ID
-	);
-
--- 반찬_서브타이틀
-ALTER TABLE "DISH_DTL_SUB"
-	ADD
-		CONSTRAINT "PK_DISH_DTL_SUB" -- 반찬_서브타이틀 기본키
+-- 서브타이틀
+ALTER TABLE DISH_DTL_SUB
+	ADD CONSTRAINT PK_DISH_DTL_SUB -- 서브타이틀 기본키
 		PRIMARY KEY (
-			"DISH_SUB_ID" -- 반찬_서브_ID
+			SUBTITLE_CODE -- 서브타이틀_번호
 		);
 
 -- 반찬
-ALTER TABLE "DISH_INFO"
-	ADD
-		CONSTRAINT "FK_COMM_FILE_TO_DISH_INFO" -- 파일 -> 반찬
+ALTER TABLE DISH_INFO
+	ADD CONSTRAINT FK_DISH_DTL_SUB_TO_DISH_INFO -- 서브타이틀 -> 반찬
 		FOREIGN KEY (
-			"FILE_CODE" -- FILE_CODE
+			SUBTITLE_CODE -- 서브타이틀_번호
 		)
-		REFERENCES "COMM_FILE" ( -- 파일
-			"FILE_CODE" -- FILE_CODE
-		);
-
--- 반찬
-ALTER TABLE "DISH_INFO"
-	ADD
-		CONSTRAINT "FK_DISH_DTL_SUB_TO_DISH_INFO" -- 반찬_서브타이틀 -> 반찬
-		FOREIGN KEY (
-			"DISH_SUB_ID" -- 반찬_서브_ID
-		)
-		REFERENCES "DISH_DTL_SUB" ( -- 반찬_서브타이틀
-			"DISH_SUB_ID" -- 반찬_서브_ID
+		REFERENCES DISH_DTL_SUB ( -- 서브타이틀
+			SUBTITLE_CODE -- 서브타이틀_번호
 		);
 
 -- 채번상세
-ALTER TABLE "AUTO_DTL"
-	ADD
-		CONSTRAINT "FK_AUTO_NO_MST_TO_AUTO_DTL" -- 채번마스터 -> 채번상세
+ALTER TABLE AUTO_DTL
+	ADD CONSTRAINT FK_AUTO_NO_MST_TO_AUTO_DTL -- 채번마스터 -> 채번상세
 		FOREIGN KEY (
-			"AUTO_NO" -- 코드2
+			AUTO_NO -- 코드2
 		)
-		REFERENCES "AUTO_NO_MST" ( -- 채번마스터
-			"AUTO_NO" -- 코드
+		REFERENCES AUTO_NO_MST ( -- 채번마스터
+			AUTO_NO -- 코드
 		);
 
 -- 게시판_상세
-ALTER TABLE "BOARD_DTL"
-	ADD
-		CONSTRAINT "FK_BOARD_MST_TO_BOARD_DTL" -- 게시판_MST -> 게시판_상세
+ALTER TABLE BOARD_DTL
+	ADD CONSTRAINT FK_BOARD_MST_TO_BOARD_DTL -- 게시판 마스터 -> 게시판_상세
 		FOREIGN KEY (
-			"BOARD_ID" -- BOARD_ID
+			BOARD_TYPE -- 게시판종류
 		)
-		REFERENCES "BOARD_MST" ( -- 게시판_MST
-			"BOARD_ID" -- BOARD_ID
+		REFERENCES BOARD_MST ( -- 게시판 마스터
+			BOARD_TYPE -- 게시판종류
 		);
 
 -- 게시판_상세
-ALTER TABLE "BOARD_DTL"
-	ADD
-		CONSTRAINT "FK_USER_TO_BOARD_DTL" -- 사용자 -> 게시판_상세
+ALTER TABLE BOARD_DTL
+	ADD CONSTRAINT FK_MEMBER_INFO_TO_BOARD_DTL -- 사용자 -> 게시판_상세
 		FOREIGN KEY (
-			"USER_ID" -- 아이디
+			MEM_ID -- 아이디
 		)
-		REFERENCES "USER" ( -- 사용자
-			"USER_ID" -- 아이디
+		REFERENCES MEMBER_INFO ( -- 사용자
+			MEM_ID -- 아이디
 		);
 
 -- 메뉴상세
-ALTER TABLE "MENU_DTL"
-	ADD
-		CONSTRAINT "FK_MENU_MST_TO_MENU_DTL" -- 메뉴 -> 메뉴상세
+ALTER TABLE MENU_DTL
+	ADD CONSTRAINT FK_MENU_MST_TO_MENU_DTL -- 메뉴 -> 메뉴상세
 		FOREIGN KEY (
-			"UP_MENU_ID" -- 대메뉴 번호
+			UP_MENU_ID -- 대메뉴 번호
 		)
-		REFERENCES "MENU_MST" ( -- 메뉴
-			"UP_MENU_ID" -- 대메뉴 번호
+		REFERENCES MENU_MST ( -- 메뉴
+			UP_MENU_ID -- 대메뉴 번호
 		);

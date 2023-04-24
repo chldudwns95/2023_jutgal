@@ -15,4 +15,26 @@
         )
     </insert>
 
+    <insert id = "insDish">
+        INSERT INTO DISH_INFO
+        (
+            DISH_CODE
+            ,DISH_NAME
+            ,DISH_CONTENTS
+            ,DISH_PRICE
+            ,DISH_G
+            ,SUBTITLE_CODE
+            ,DISH_VIEW_CNT
+        )
+        VALUES
+        (
+            #{DISH_CODE}
+            ,#{DISH_NAME}
+            ,#{DISH_CONTENTS}
+            ,#{DISH_PRICE}
+            ,#{DISH_G}
+            ,#{SUBTITLE_CODE}
+            ,0
+        )
+    </insert>
 </mapper>

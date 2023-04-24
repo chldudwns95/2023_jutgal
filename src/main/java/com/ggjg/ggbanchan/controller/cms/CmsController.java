@@ -42,8 +42,18 @@ public class CmsController {
     public String insSub(Dish dish) {
         dishSvc.insSub(dish);
 
-         return "/cms/dish/subList";
+         return "redirect:../dish/subList";
+    }
 
+    @GetMapping("/dish/insDish")
+    public String insDish() {
+        return "/cms/dish/insDish";
+    }
+
+    @PostMapping("/dish/insDish")
+    public String insDish(Dish dish) {
+        dishSvc.insDish(dish);
+        return "redirect:../dish/dishList";
     }
 
 

@@ -11,15 +11,17 @@
 </head>
 <body>
     <div>
-        <div>
-            <form method="post">
+        <form method="post">
+            <div>
                 <label>코드 (추후 자동등록)</label>
                 <input type = "text" name = "SUBTITLE_CODE" placeholder="코드를 입력하여 주세요."/>
+            </div>
+            <div>
                 <label>내용</label>
                 <input type = "text" name = "SUBTITLE_NAME" placeholder="'#' 반찬을 입력하여 주세요."/>
-                <button>등록</button>
-            </form>
-        </div>
+            </div>
+            <button>등록</button>
+        </form>
     </div>
 </body>
 </html>

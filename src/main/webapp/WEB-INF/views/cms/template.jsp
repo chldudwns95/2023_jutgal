@@ -41,6 +41,26 @@
                     </div>
                 </ul>
             </li>
+            <li class="menu">
+                <div class="menu_wrap">
+                    <span class="menu_name">공통관리</span>
+                    <span class="material-symbols-outlined more_btn">expand_more</span>
+                </div>
+                <ul class="menu_depth2">
+                    <div class="wrap">
+                        <a href="/cms/dish/dishList">
+                            <li class="menu">
+                                <span class="menu_name">공통코드</span>
+                            </li>
+                        </a>
+                        <a href="/cms/dish/subList">
+                            <li class="menu">
+                                <span class="menu_name">메뉴</span>
+                            </li>
+                        </a>
+                    </div>
+                </ul>
+            </li>
         </ul>
     </div>
     <div class="nav_footer">

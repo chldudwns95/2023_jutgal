@@ -48,12 +48,12 @@
                 </div>
                 <ul class="menu_depth2">
                     <div class="wrap">
-                        <a href="/cms/dish/dishList">
+                        <a href="/cms/com/comList">
                             <li class="menu">
                                 <span class="menu_name">공통코드</span>
                             </li>
                         </a>
-                        <a href="/cms/dish/subList">
+                        <a href="/cms/com/menuList">
                             <li class="menu">
                                 <span class="menu_name">메뉴</span>
                             </li>

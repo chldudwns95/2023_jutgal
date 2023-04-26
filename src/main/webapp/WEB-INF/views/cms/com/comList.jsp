@@ -7,9 +7,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>[관리자] 공통코드 등록</title>
 </head>
 <body>
-    <a href = "/cms/intro/insIntro">등록</a>
+    <a href = "/cms/com/insComCode">공통코드 등록</a>
 </body>
 </html>

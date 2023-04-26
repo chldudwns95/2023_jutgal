@@ -10,6 +10,6 @@
     <title></title>
 </head>
 <body>
-    <a href = "/cms/intro/insIntro">등록</a>
+
 </body>
 </html>

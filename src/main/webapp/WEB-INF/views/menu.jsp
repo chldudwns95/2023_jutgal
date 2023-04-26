@@ -42,7 +42,8 @@
                         </li>
                         <li>
                             <i class="fa-solid fa-lock" style="color: #ff5c5c;"></i>
-                            <a href ="/login">로그인</a>
+<%--                            <a href ="/login">로그인</a>--%>
+                            <a href = "/cms">로그인</a>
                         </li>
                     </ul>
                 </div>

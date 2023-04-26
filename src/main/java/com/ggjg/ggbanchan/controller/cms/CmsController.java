@@ -27,6 +27,11 @@ public class CmsController {
         return "/cms/intro/introList";
     }
 
+    @GetMapping("/intro/insIntro")
+    public String insIntro() {
+        return "/cms/intro/insIntro";
+    }
+
 
     @GetMapping("/dish/subList")
     public String subList() {
@@ -61,4 +66,26 @@ public class CmsController {
     public String dishList() {
         return "/cms/dish/dishList";
     }
+
+
+    @GetMapping("/com/comList")
+    public String comList() {
+        return "/cms/com/comList";
+    }
+    @GetMapping("/com/insComCode")
+    public String insComCode() {
+        return "/cms/com/insComCode";
+    }
+
+    @GetMapping("/com/menuList")
+    public String menuList() {
+        return "/cms/com/menuList";
+    }
+
+    @GetMapping("/com/insMenu")
+    public String insMenuList() {
+        return "/cms/com/insMenu";
+    }
+
+
 }

@@ -13,7 +13,7 @@
 
 <body>
 
-    <footer class = "main_container">
+    <div class = "main_container">
     <jsp:include page="menu.jsp"/>
         <div class = "slide_wrap">
             <div class ="slide">
@@ -126,6 +126,7 @@
                 </ul>
             </div>
         </div>
+
         <footer>
             <jsp:include page="footer.jsp"/>
         </footer>

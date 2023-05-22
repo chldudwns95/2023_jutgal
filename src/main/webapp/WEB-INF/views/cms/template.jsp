@@ -1,9 +1,13 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <div class="grid_layout_bg"></div>
 <div class="nav">
     <div class="title_container">
-        <img src = "/resources/image/logo.png" style = "width :180px; height: 50px;">
+        <a href = "/">
+            <img src = "/resources/image/logo.png" style = "width :180px; height: 50px;">
+        </a>
     </div>
     <div class="nav_container">
         <ul class="menu_list">
@@ -63,17 +67,23 @@
             </li>
         </ul>
     </div>
-    <div class="nav_footer">
+    <footer class="nav_footer">
         <span>시스템 문의</span>
         <span>Tel. 010-9556-6646</span>
         <span>Copyright 2023. <br>강경젓갈 all rights reserved.</span>
-    </div>
+    </footer>
 </div>
 <div class="header">
     <div class="menu_btn_wrap">
             <span class="material-symbols-outlined menu_btn" id="menuBtn">
                 menu
             </span>
+    </div>
+    <div class = "member_wrap">
+        <div>
+
+        </div>
+       <a href = "/logout">로그아웃</a>
     </div>
    <%-- <div class="member_wrap">
         <span>${admin.loginid}</span>

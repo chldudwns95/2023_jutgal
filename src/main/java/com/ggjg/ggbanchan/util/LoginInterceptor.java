@@ -16,7 +16,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         Member member = (Member) session.getAttribute("member");
 
         if(member != null) {
-            if ("Master".equals(member.getROLE()))
+            if ("admin".equals(member.getROLE()))
                 return true;
         } else {
             response.sendRedirect("/login");

@@ -6,6 +6,13 @@ public class Member {
     String ROLE;
     String NAME;
 
+    public void loginMember(String MEM_ID, String MEM_PW, String ROLE, String NAME) {
+        this.MEM_ID = MEM_ID;
+        this.MEM_PW = MEM_PW;
+        this.ROLE = ROLE;
+        this.NAME = NAME;
+    }
+
     public String getMEM_ID() {
         return MEM_ID;
     }

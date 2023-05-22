@@ -3,11 +3,18 @@
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
+
+	<!-- 암복호화 처리 -->
+	<!-- 출처 :https://huimang2.github.io/java/spring-legacy-security.html
+			   https://retrieverj.tistory.com/9 -->
 	<!-- The definition of the Root Spring Container shared by all Servlets 
 		and Filters -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+		<param-value>
+			/WEB-INF/spring/root-context.xml
+			/WEB-INF/spring/security-context.xml
+		</param-value>
 	</context-param>
 
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
@@ -78,6 +85,6 @@
     force: 강요하다, 힘
     forceEncoding, 강제로 해라
     /* 모든 주소에 대해서 필터링을 해라 url패턴
-
      -->
+
 </web-app>

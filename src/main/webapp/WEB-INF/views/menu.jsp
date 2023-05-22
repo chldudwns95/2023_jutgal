@@ -40,10 +40,22 @@
                             <i class="fa-solid fa-circle-question" style="color: #ff5c5c;"></i>
                             <a href ="/qna">문의</a>
                         </li>
-                        <li>
-                            <i class="fa-solid fa-lock" style="color: #ff5c5c;"></i>
-                            <a href ="/login">로그인</a>
-                        </li>
+                        <c:if test="${sessionScope.member == null}">
+                            <li>
+                                <i class="fa-solid fa-lock" style="color: #ff5c5c;"></i>
+                                <a href ="/login">로그인</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-lock" style="color: #ff5c5c;"></i>
+                                <a href ="/signup">회원가입</a>
+                            </li>
+                        </c:if>
+                        <c:if test="${sessionScope.member != null}">
+                            <li>
+                                <i class="fa-solid fa-lock" style="color: #ff5c5c;"></i>
+                                <a href ="/cms">관리</a>
+                            </li>
+                        </c:if>
                     </ul>
                 </div>
                 <div class = "logo">
@@ -90,9 +102,14 @@
                     <a href ="/qna">문의</a>
                 </li>
                 <li>
+                <c:if test="${sessionScope.member == null}">
                     <i class="fa-solid fa-lock" style="color: #ff5c5c;"></i>
-                    <a href ="/cms">로그인</a>
-                </li>
+                    <a href ="/login">로그인</a>
+                </c:if>
+                <c:if test="${sessionScope.member != null}">
+                    <i class="fa-solid fa-lock" style="color: #ff5c5c;"></i>
+                    <a href ="/cms">관리</a>
+                </c:if>
             </ul>
         </div>
     </div>

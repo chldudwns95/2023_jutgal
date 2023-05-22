@@ -5,6 +5,9 @@ import com.ggjg.ggbanchan.model.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+
 @Service
 public class MemberServiceImpl implements MemberService {
 
@@ -12,7 +15,14 @@ public class MemberServiceImpl implements MemberService {
     MemberDao dao;
 
     @Override
+    public void insertMember(Member member) {
+        dao.insertMember(member);
+    }
+
+    @Override
     public Member login(Member member) {
         return dao.login(member);
     }
+
+
 }

@@ -1,75 +1,77 @@
 package com.ggjg.ggbanchan.model;
 
 public class Dish {
-    private String DISH_CODE;
-    private String DISH_NAME;
-    private String DISH_CONTENTS;
-    private String DISH_PRICE;
-    private String DISH_G;
-    private String SUBTITLE_CODE;
-    private String SUBTITLE_NAME;
-    private int DISH_VIEW_CNT;
 
-    public String getDISH_CODE() {
-        return DISH_CODE;
+    private String dishCode;
+    private String dishName;
+    private String dishContents;
+    private String dishPrice;
+    private String dishG;
+    private String subtileCode;
+    private String subTitleName;
+    private int dishViewCnt;
+
+    public String getDishCode() {
+        return dishCode;
     }
 
-    public void setDISH_CODE(String DISH_CODE) {
-        this.DISH_CODE = DISH_CODE;
+    public void setDishCode(String dishCode) {
+        this.dishCode = dishCode;
     }
 
-    public String getDISH_NAME() {
-        return DISH_NAME;
+    public String getDishName() {
+        return dishName;
     }
 
-    public void setDISH_NAME(String DISH_NAME) {
-        this.DISH_NAME = DISH_NAME;
+    public void setDishName(String dishName) {
+        this.dishName = dishName;
     }
 
-    public String getDISH_CONTENTS() {
-        return DISH_CONTENTS;
+    public String getDishContents() {
+        return dishContents;
     }
 
-    public void setDISH_CONTENTS(String DISH_CONTENTS) {
-        this.DISH_CONTENTS = DISH_CONTENTS;
+    public void setDishContents(String dishContents) {
+        this.dishContents = dishContents;
     }
 
-    public String getDISH_PRICE() {
-        return DISH_PRICE;
+    public String getDishPrice() {
+        return dishPrice;
     }
 
-    public void setDISH_PRICE(String DISH_PRICE) {
-        this.DISH_PRICE = DISH_PRICE;
+    public void setDishPrice(String dishPrice) {
+        this.dishPrice = dishPrice;
     }
 
-    public String getDISH_G() {
-        return DISH_G;
+    public String getDishG() {
+        return dishG;
     }
 
-    public void setDISH_G(String DISH_G) {
-        this.DISH_G = DISH_G;
+    public void setDishG(String dishG) {
+        this.dishG = dishG;
     }
 
-    public String getSUBTITLE_CODE() {
-        return SUBTITLE_CODE;
+    public String getSubtileCode() {
+        return subtileCode;
     }
 
-    public void setSUBTITLE_CODE(String SUBTITLE_CODE) {
-        this.SUBTITLE_CODE = SUBTITLE_CODE;
+    public void setSubtileCode(String subtileCode) {
+        this.subtileCode = subtileCode;
     }
 
-    public String getSUBTITLE_NAME() {
-        return SUBTITLE_NAME;
+    public String getSubTitleName() {
+        return subTitleName;
     }
 
-    public void setSUBTITLE_NAME(String SUBTITLE_NAME) {
-        this.SUBTITLE_NAME = SUBTITLE_NAME;
-    }
-    public int getDISH_VIEW_CNT() {
-        return DISH_VIEW_CNT;
+    public void setSubTitleName(String subTitleName) {
+        this.subTitleName = subTitleName;
     }
 
-    public void setDISH_VIEW_CNT(int DISH_VIEW_CNT) {
-        this.DISH_VIEW_CNT = DISH_VIEW_CNT;
+    public int getDishViewCnt() {
+        return dishViewCnt;
+    }
+
+    public void setDishViewCnt(int dishViewCnt) {
+        this.dishViewCnt = dishViewCnt;
     }
 }

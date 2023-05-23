@@ -3,77 +3,80 @@ package com.ggjg.ggbanchan.model;
 import java.util.Date;
 
 public class AutoNo {
-    private String AUTO_NO;
-    private String AUTO_NM;
-    private String REF_CODE;
-    private String REF_NAME;
-    private String COMM_CD;
-    private String PRE_FIX;
-    private String AFTER_FIX;
-    private Date REG_DATE;
+    /* AutoMst */
+    private String autoNo;
+    private String autoNm;
+    private String refCode;
+    private String refName;
 
-    public String getAUTO_NO() {
-        return AUTO_NO;
+    /* AutoDtl */
+    private String commCd;
+    private String preFix;
+    private String afterFixl;
+    private Date RegDate;
+
+    public String getAutoNo() {
+        return autoNo;
     }
 
-    public void setAUTO_NO(String AUTO_NO) {
-        this.AUTO_NO = AUTO_NO;
+    public void setAutoNo(String autoNo) {
+        this.autoNo = autoNo;
     }
 
-    public String getAUTO_NM() {
-        return AUTO_NM;
+    public String getAutoNm() {
+        return autoNm;
     }
 
-    public void setAUTO_NM(String AUTO_NM) {
-        this.AUTO_NM = AUTO_NM;
+    public void setAutoNm(String autoNm) {
+        this.autoNm = autoNm;
     }
 
-    public String getREF_CODE() {
-        return REF_CODE;
+    public String getRefCode() {
+        return refCode;
     }
 
-    public void setREF_CODE(String REF_CODE) {
-        this.REF_CODE = REF_CODE;
+    public void setRefCode(String refCode) {
+        this.refCode = refCode;
     }
 
-    public String getREF_NAME() {
-        return REF_NAME;
+    public String getRefName() {
+        return refName;
     }
 
-    public void setREF_NAME(String REF_NAME) {
-        this.REF_NAME = REF_NAME;
+    public void setRefName(String refName) {
+        this.refName = refName;
     }
 
-    public String getCOMM_CD() {
-        return COMM_CD;
+    public String getCommCd() {
+        return commCd;
     }
 
-    public void setCOMM_CD(String COMM_CD) {
-        this.COMM_CD = COMM_CD;
+    public void setCommCd(String commCd) {
+        this.commCd = commCd;
     }
 
-    public String getPRE_FIX() {
-        return PRE_FIX;
+    public String getPreFix() {
+        return preFix;
     }
 
-    public void setPRE_FIX(String PRE_FIX) {
-        this.PRE_FIX = PRE_FIX;
+    public void setPreFix(String preFix) {
+        this.preFix = preFix;
     }
 
-    public String getAFTER_FIX() {
-        return AFTER_FIX;
+    public String getAfterFixl() {
+        return afterFixl;
     }
 
-    public void setAFTER_FIX(String AFTER_FIX) {
-        this.AFTER_FIX = AFTER_FIX;
+    public void setAfterFixl(String afterFixl) {
+        this.afterFixl = afterFixl;
     }
 
-    public Date getREG_DATE() {
-        return REG_DATE;
+    public Date getRegDate() {
+        return RegDate;
     }
 
-    public void setREG_DATE(Date REG_DATE) {
-        this.REG_DATE = REG_DATE;
+    public void setRegDate(Date regDate) {
+        RegDate = regDate;
     }
 }
 

@@ -30,16 +30,16 @@
                     <ul>
                         <li>
                             <i class="fa-solid fa-book" style="color: #ff5c5c;"></i>
-                            <a href ="/intro">소개</a>
+                            <a href ="/board">이야기</a>
                         </li>
                         <li>
                             <i class="fa-solid fa-gift" style="color: #ff5c5c;"></i>
                             <a href ="/dish">반찬</a>
                         </li>
-                        <li>
+<%--                        <li>
                             <i class="fa-solid fa-circle-question" style="color: #ff5c5c;"></i>
                             <a href ="/qna">문의</a>
-                        </li>
+                        </li>--%>
                         <c:if test="${sessionScope.loginMember == null}">
                             <li>
                                 <i class="fa-solid fa-lock" style="color: #ff5c5c;"></i>
@@ -91,15 +91,11 @@
             <ul>
                 <li>
                     <i class="fa-solid fa-book" style="color: #ff5c5c;"></i>
-                    <a href ="/intro">소개</a>
+                    <a href ="/board">이야기</a>
                 </li>
                 <li>
                     <i class="fa-solid fa-gift" style="color: #ff5c5c;"></i>
                     <a href ="/dish">반찬</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-circle-question" style="color: #ff5c5c;"></i>
-                    <a href ="/qna">문의</a>
                 </li>
                 <li>
                 <c:if test="${sessionScope.loginMember == null}">

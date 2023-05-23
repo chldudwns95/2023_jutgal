@@ -3,12 +3,12 @@
 <mapper namespace="member">
 
     <select id = "login" resultType = "Member">
-        SELECT MEM_ID
-              ,MEM_PW
-              ,ROLE
-              ,NAME
+        SELECT MEM_ID AS MEM_ID
+              ,MEM_PW AS MEM_PW
+              ,ROLE AS ROLE
+              ,NAME AS NAME
         FROM MEMBER_INFO
-        WHERE MEM_ID = #{MEM_ID}
+        WHERE MEM_ID = #{memId}
     </select>
   <!--  /*      암호화 전
     SELECT MEM_ID AS MEM_ID
@@ -21,6 +21,13 @@
 
     /* PW는 Controller 에서 비교하기때문에 id값만 비교하면 됨.*/-->
 
+    <select id = "findByPw" resultType="Member">
+        SELECT MEM_PW AS MEM_PW
+        FROM MEMBER_INFO
+        WHERE MEM_ID = #{memId}
+    </select>
+
+
     <insert id = "signup">
         INSERT INTO MEMBER_INFO
         (
@@ -30,10 +37,10 @@
             ,NAME
         )VALUES
         (
-             #{MEM_ID}
-            ,#{MEM_PW}
-            ,#{ROLE}
-            ,#{NAME}
+             #{memId}
+            ,#{memPw}
+            ,#{role}
+            ,#{name}
         )
     </insert>
 </mapper>

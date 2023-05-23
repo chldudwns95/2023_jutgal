@@ -17,19 +17,19 @@
 <form action="/signup" method="post">
     <div>
         <label>ID</label>
-        <input type = "text" name = "MEM_ID"/>
+        <input type = "text" name = "memId"/>
     </div>
     <div>
         <label>PW</label>
-        <input type = "password" name = "MEM_PW"/>
+        <input type = "password" name = "memPw"/>
     </div>
     <div>
         <label>권한</label>
-        <input type = "text" name = "ROLE" value = "admin"/>
+        <input type = "text" name = "role" value = "admin"/>
     </div>
     <div>
         <label>별명</label>
-        <input type = "text" name = "NAME"/>
+        <input type = "text" name = "name"/>
     </div>
     <input type = "submit" value = "submit"/>
 </form>

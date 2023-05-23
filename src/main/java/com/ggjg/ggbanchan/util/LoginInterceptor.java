@@ -13,10 +13,10 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HttpSession session = request.getSession();
 
-        Member member = (Member) session.getAttribute("member");
+        Member loginMember = (Member) session.getAttribute("loginMember");
 
-        if(member != null) {
-            if ("admin".equals(member.getROLE()))
+        if(loginMember != null) {
+            if ("admin".equals(loginMember.getRole()))
                 return true;
         } else {
             response.sendRedirect("/login");

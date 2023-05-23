@@ -1,47 +1,44 @@
 package com.ggjg.ggbanchan.model;
 
 public class Member {
-    String MEM_ID;
-    String MEM_PW;
-    String ROLE;
-    String NAME;
+    String memId;
+    String memPw;
+    String role;
+    String name;
 
-    public void loginMember(String MEM_ID, String MEM_PW, String ROLE, String NAME) {
-        this.MEM_ID = MEM_ID;
-        this.MEM_PW = MEM_PW;
-        this.ROLE = ROLE;
-        this.NAME = NAME;
+    public Member() {
+
     }
 
-    public String getMEM_ID() {
-        return MEM_ID;
+    public String getMemId() {
+        return memId;
     }
 
-    public void setMEM_ID(String MEM_ID) {
-        this.MEM_ID = MEM_ID;
+    public void setMemId(String memId) {
+        this.memId = memId;
     }
 
-    public String getMEM_PW() {
-        return MEM_PW;
+    public String getMemPw() {
+        return memPw;
     }
 
-    public void setMEM_PW(String MEM_PW) {
-        this.MEM_PW = MEM_PW;
+    public void setMemPw(String memPw) {
+        this.memPw = memPw;
     }
 
-    public String getROLE() {
-        return ROLE;
+    public String getRole() {
+        return role;
     }
 
-    public void setROLE(String ROLE) {
-        this.ROLE = ROLE;
+    public void setRole(String role) {
+        this.role = role;
     }
 
-    public String getNAME() {
-        return NAME;
+    public String getName() {
+        return name;
     }
 
-    public void setNAME(String NAME) {
-        this.NAME = NAME;
+    public void setName(String name) {
+        this.name = name;
     }
 }

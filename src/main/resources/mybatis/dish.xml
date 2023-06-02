@@ -10,15 +10,15 @@
         )
         VALUES
         (
-         #{SUBTITLE_CODE}
-        ,#{SUBTITLE_NAME}
+         #{subtitleCode}
+        ,#{subtitleName}
         )
     </insert>
 
     <insert id = "insDish">
         INSERT INTO DISH_INFO
         (
-            DISH_CODE
+             DISH_CODE
             ,DISH_NAME
             ,DISH_CONTENTS
             ,DISH_PRICE
@@ -28,12 +28,12 @@
         )
         VALUES
         (
-            #{DISH_CODE}
-            ,#{DISH_NAME}
-            ,#{DISH_CONTENTS}
-            ,#{DISH_PRICE}
-            ,#{DISH_G}
-            ,#{SUBTITLE_CODE}
+             #{dishCode}
+            ,#{dishName}
+            ,#{dishContents}
+            ,#{dishPrice}
+            ,#{dishG}
+            ,#{subtileCode}
             ,0
         )
     </insert>

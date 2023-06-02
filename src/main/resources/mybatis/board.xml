@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+
+    <insert id="saveBoardType">
+        INSERT INTO BOARD_MST
+        (
+              BOARD_TYPE
+             ,BOARD_NAME
+         )
+        VALUES
+        (
+             #{boardType}
+            ,#{boardName}
+        )
+    </insert>
+
+    <insert id="saveIntro">
+        INSERT INTO BOARD_DTL
+        (
+             BOARD_CODE
+            ,BOARD_TITLE
+            ,BOARD_CONTENTS
+            ,REG_DATE
+            ,BOARD_VIEW_CNT
+            ,BOARD_TYPE
+            ,MEM_ID
+        )
+        VALUES
+        (
+             #{boardCode}
+            ,#{boardTitle}
+            ,#{boardContents}
+            ,NOW()
+            ,0
+            ,#{boardType}
+            ,'ggbanchan'
+        )
+    </insert>
+
+</mapper>

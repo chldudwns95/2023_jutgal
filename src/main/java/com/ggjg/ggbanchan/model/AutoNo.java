@@ -78,6 +78,21 @@ public class AutoNo {
     public void setRegDate(Date regDate) {
         RegDate = regDate;
     }
+
+
+    @Override
+    public String toString() {
+        return "AutoNo{" +
+                "autoNo='" + autoNo + '\'' +
+                ", autoNm='" + autoNm + '\'' +
+                ", refCode='" + refCode + '\'' +
+                ", refName='" + refName + '\'' +
+                ", commCd='" + commCd + '\'' +
+                ", preFix='" + preFix + '\'' +
+                ", afterFixl='" + afterFixl + '\'' +
+                ", RegDate=" + RegDate +
+                '}';
+    }
 }
 
 

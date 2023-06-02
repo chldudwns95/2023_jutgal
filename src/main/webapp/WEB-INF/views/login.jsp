@@ -20,10 +20,10 @@
                         <h1>로그인</h1>
                     </div>
                     <div class = "login_id">
-                        <input id = "loginId" type="text" name = "memId" placeholder="ID를 입력하세요">
+                        <input id = "loginId" type="text" name = "memId" placeholder="ID를 입력하세요" value = "ggbanchan">
                     </div>
                     <div class = "login_pw">
-                        <input id = "loginPw" type = "password" name = "memPw" placeholder="PW를 입력하세요">
+                        <input id = "loginPw" type = "password" name = "memPw" placeholder="PW를 입력하세요" value = "chldudwns95!">
                     </div>
                     <span class = "errorMsg">아이디 또는 비밀번호를 확인해주세요.</span>
                     <button type = "button" id = "login_btn">로그인</button>
@@ -40,9 +40,7 @@
 <script>
 
     const clickedLogin = document.getElementById('login_btn');
-
     clickedLogin.addEventListener('click', () => {
-
         $.ajax({
             url : 'login',
             type : 'POST',
@@ -53,6 +51,24 @@
             }
         })
     });
+
+    const enterLoginPw = document.getElementById('loginPw');
+    enterLoginPw.addEventListener("keyup", () => {
+        if(window.event.keyCode === 13) {
+            $.ajax({
+                url : 'login',
+                type : 'POST',
+                data: $('form').serialize(),
+                success : () => window.location = '/cms',
+                error : () => {
+                    document.querySelector('.errorMsg').style.display = "block";
+                }
+            })
+        }
+    });
+
+
+
 
 </script>
 </body>

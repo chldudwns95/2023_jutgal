@@ -7,8 +7,8 @@ public class Dish {
     private String dishContents;
     private String dishPrice;
     private String dishG;
-    private String subtileCode;
-    private String subTitleName;
+    private String subtitleCode;
+    private String subtitleName;
     private int dishViewCnt;
 
     public String getDishCode() {
@@ -51,20 +51,20 @@ public class Dish {
         this.dishG = dishG;
     }
 
-    public String getSubtileCode() {
-        return subtileCode;
+    public String getSubtitleCode() {
+        return subtitleCode;
     }
 
-    public void setSubtileCode(String subtileCode) {
-        this.subtileCode = subtileCode;
+    public void setSubtitleCode(String subtitleCode) {
+        this.subtitleCode = subtitleCode;
     }
 
-    public String getSubTitleName() {
-        return subTitleName;
+    public String getSubtitleName() {
+        return subtitleName;
     }
 
-    public void setSubTitleName(String subTitleName) {
-        this.subTitleName = subTitleName;
+    public void setSubtitleName(String subtitleName) {
+        this.subtitleName = subtitleName;
     }
 
     public int getDishViewCnt() {

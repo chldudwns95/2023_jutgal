@@ -18,7 +18,7 @@
                 </div>
             </li>
             <li class="menu">
-                <a href = "/cms/intro/introList">
+                <a href = "/cms/board/introList">
                     <div class="menu_wrap">
                         <span class="menu_name">공지관리</span>
                         <span class="material-symbols-outlined more_btn">chevron_right</span>
@@ -60,6 +60,11 @@
                         <a href="/cms/com/menuList">
                             <li class="menu">
                                 <span class="menu_name">메뉴</span>
+                            </li>
+                        </a>
+                        <a href="/cms/board/typeList">
+                            <li class="menu">
+                                <span class="menu_name">게시판 타입</span>
                             </li>
                         </a>
                     </div>

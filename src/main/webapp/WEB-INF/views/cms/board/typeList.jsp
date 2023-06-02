@@ -8,8 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <link rel="icon" href=""/>
 </head>
 <body>
-    <a href = "/cms/intro/insIntro">등록</a>
+<a href = "/cms/board/saveTypeList">등록</a>
 </body>
 </html>

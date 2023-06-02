@@ -10,12 +10,15 @@
         <!--<typeAlias type="kr.ac.kopo.together.model.Take" alias="Take"/>-->
         <typeAlias type="com.ggjg.ggbanchan.model.Dish" alias = "Dish"/>
         <typeAlias type="com.ggjg.ggbanchan.model.Member" alias = "Member"/>
+        <typeAlias type="com.ggjg.ggbanchan.model.AutoNo" alias = "AutoNo"/>
+        <typeAlias type="com.ggjg.ggbanchan.model.Board" alias = "Board"/>
     </typeAliases>
 
     <mappers>
         <!--<mapper resource="mybatis/take.xml"/>-->
         <mapper resource="mybatis/dish.xml"/>
         <mapper resource="mybatis/member.xml"/>
-
+        <mapper resource="mybatis/autoNo.xml"/>
+        <mapper resource="mybatis/board.xml"/>
     </mappers>
 </configuration>

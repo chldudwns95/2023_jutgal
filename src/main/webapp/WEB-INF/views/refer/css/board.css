@@ -1,0 +1,15 @@
+.search-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.board-status-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.board-status-container > div p{
+    margin: 6px 0;
+}

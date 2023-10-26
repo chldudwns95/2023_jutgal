@@ -59,7 +59,7 @@
         <div class = "intro_wrap">
                 <p class = "intro_txt">
                     SINCE <strong>1999 <br>
-                    강경젓갈</strong>의 이야기를 들어보실레요?
+                    강경젓갈</strong>의 이야기를 들어보실래요?
                 </p>
                 <span class = "intro_play">
                     <i class="fa-solid fa-play fa-2xl" style="color: #ff5c5c;"></i>
